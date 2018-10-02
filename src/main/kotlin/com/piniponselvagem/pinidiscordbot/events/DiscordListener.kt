@@ -1,6 +1,11 @@
 package com.piniponselvagem.pinidiscordbot.events
 
 import com.piniponselvagem.pinidiscordbot.Bot
+import com.piniponselvagem.pinidiscordbot.utils.writeTo
+import net.dv8tion.jda.core.entities.Channel
+import net.dv8tion.jda.core.entities.Guild
+import net.dv8tion.jda.core.entities.Member
+import net.dv8tion.jda.core.events.ReadyEvent
 import net.dv8tion.jda.core.events.guild.voice.GuildVoiceMoveEvent
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent
@@ -11,10 +16,9 @@ import net.dv8tion.jda.core.managers.GuildController
 
 class DiscordListener(val bot: Bot) : ListenerAdapter() {
 
-    /*
     override fun onReady(event: ReadyEvent) {
-        val txt = StringBuilder()
         for (g: Guild in bot.jda.guilds) {
+            val txt = StringBuilder()
             txt.appendln("${g.name} - ${g.id}")
             txt.appendln("    Text Channels")
             for (c: Channel in g.textChannels) {
@@ -31,11 +35,9 @@ class DiscordListener(val bot: Bot) : ListenerAdapter() {
             for (m: Member in g.members) {
                 txt.appendln("        ${m.user.name} - ${m.effectiveName} - ${m.user.id} ${if(m.user.isBot) "[BOT]" else ""}")
             }
-            txt.appendln()
+            writeTo("guilds", "${g.id}.guild", txt.toString())
         }
-        writeTo("testing", "guilds_channels", txt.toString())
     }
-    */
 
     override fun onGuildMessageReceived(event: GuildMessageReceivedEvent) {
         if (event.channel.id == "476806936029954048") {

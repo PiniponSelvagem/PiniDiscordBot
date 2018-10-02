@@ -7,7 +7,7 @@ import net.dv8tion.jda.core.AccountType
 import net.dv8tion.jda.core.JDABuilder
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent
 
-class Bot(token: String, val ownerID: String) : Thread() {
+class Bot(token: String, ownerID: String) : Thread() {
     private val discordListener = DiscordListener(this)
     val jda = JDABuilder(AccountType.BOT)
             .setToken(token)
