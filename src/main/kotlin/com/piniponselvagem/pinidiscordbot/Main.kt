@@ -3,9 +3,8 @@ package com.piniponselvagem.pinidiscordbot
 object Main {
 
     /** PiniBot **/
-    private const val token   = "NDc2NDY0MzY0NjMxODgzNzgy.Dkt9sQ.WtgBXes7IC_38JMoPKGcGDGPJ2A"
-    private const val ownerID = "226488833053687808"
-
+    private const val token   = ""
+    private const val ownerID = ""
 
     @JvmStatic
     fun main(args: Array<String>) {

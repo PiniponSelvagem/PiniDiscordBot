@@ -35,12 +35,13 @@ class DiscordListener(val bot: Bot) : ListenerAdapter() {
             for (m: Member in g.members) {
                 txt.appendln("        ${m.user.name} - ${m.effectiveName} - ${m.user.id} ${if(m.user.isBot) "[BOT]" else ""}")
             }
-            writeTo("guilds", "${g.id}.guild", txt.toString())
+            //writeTo("guilds\\${g.id}", "info.txt", txt.toString())
         }
     }
 
     override fun onGuildMessageReceived(event: GuildMessageReceivedEvent) {
-        if (event.channel.id == "476806936029954048") {
+        //event.channel.id == "476806936029954048"
+        //if (event.channel.id == "476806936029954048") {
 
             println("${event.channel} - ${event.author.name} [${event.author.id}}: ${event.message.contentRaw}")
 
@@ -66,18 +67,9 @@ class DiscordListener(val bot: Bot) : ListenerAdapter() {
                 }
             }
             */
-        }
+//        }
 
         //event.channel.sendMessage(event.message.contentRaw).queue()
-
-        /*
-        TC:general(495215170021359618) - PiniponSelvagem: J
-        [MB:PiniponSelvagem(U:PiniponSelvagem(226488833053687808) / G:PiniServer(495215170021359616)), MB:Sasuke(U:Sasuke(476464364631883782) / G:PiniServer(495215170021359616))]
-        [MB:PiniponSelvagem(U:PiniponSelvagem(226488833053687808) / G:PiniServer(495215170021359616))]
-        TC:pinibot(476806936029954048) - PiniponSelvagem: owner test
-        [MB:Agulha <3(U:Agulha <3(409064623568977920) / G:#ThugLife Community(476050619702968333)), MB:TwitchBot(U:TwitchBot(375805687529209857) / G:#ThugLife Community(476050619702968333)), MB:xick0(U:xick0(386954978649964554) / G:#ThugLife Community(476050619702968333)), MB:🔰 Rodas75(U:🔰 Rodas75(341944666616365057) / G:#ThugLife Community(476050619702968333)), MB:Koty(U:Koty(290455004219834370) / G:#ThugLife Community(476050619702968333)), MB:systemdead1337(U:systemdead1337(217385680932700160) / G:#ThugLife Community(476050619702968333)), MB:Skeetzz(U:Skeetzz(367412000239648769) / G:#ThugLife Community(476050619702968333)), MB:nALRIGHT(U:nALRIGHT(399376752058826762) / G:#ThugLife Community(476050619702968333)), MB:magicz7(U:magicz7(199513255452999680) / G:#ThugLife Community(476050619702968333)), MB:Dank Memer(U:Dank Memer(270904126974590976) / G:#ThugLife Community(476050619702968333)), MB:If I die I'm a legend(U:If I die I'm a legend(341945368012914699) / G:#ThugLife Community(476050619702968333)), MB:Sasuke(U:Sasuke(476464364631883782) / G:#ThugLife Community(476050619702968333)), MB:Kris(U:Kris(324340271934472193) / G:#ThugLife Community(476050619702968333)), MB:Dragon#(U:DragonAsiimov(419837023910625280) / G:#ThugLife Community(476050619702968333)), MB:PiniponSelvagem(U:PiniponSelvagem(226488833053687808) / G:#ThugLife Community(476050619702968333)), MB:carregado(U:carregado(481461539598106624) / G:#ThugLife Community(476050619702968333)), MB:Dr3amS(U:Dr3amS(302535276876660757) / G:#ThugLife Community(476050619702968333)), MB:HypnotizeR(U:HypnotizeR(231874220060049412) / G:#ThugLife Community(476050619702968333)), MB:🔥 SK Fox 🔥(U:🔥 SK Fox 🔥(312976431321841664) / G:#ThugLife Community(476050619702968333)), MB:Dyno(U:Dyno(155149108183695360) / G:#ThugLife Community(476050619702968333)), MB:Rodas75#(U:Rythm(235088799074484224) / G:#ThugLife Community(476050619702968333))]
-        [MB:🔰 Rodas75(U:🔰 Rodas75(341944666616365057) / G:#ThugLife Community(476050619702968333))]
-         */
     }
 
     override fun onMessageReceived(event: MessageReceivedEvent) {

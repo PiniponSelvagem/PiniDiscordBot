@@ -16,6 +16,7 @@ fun writeTo(dir: String, fileName: String, content: String) : Boolean {
         println("Output saved to: ..\\$fileFullPath")
         return true
     } catch (e: IOException) {
+        println(e)
         //TODO: //log.error(e.message)
     }
     return false
@@ -35,6 +36,7 @@ fun readFrom(dir: String, fileName: String) : Boolean {
         reader.close()
         return true
     } catch (e: IOException) {
+        println(e)
         //TODO: //log.error(e.message)
     }
     return false
