@@ -1,20 +1,20 @@
 package com.piniponselvagem.pinidiscordbot
 
-object Main {
+import com.piniponselvagem.pinidiscordbot.utils.readConfig
 
-    /** PiniBot **/
-    private const val token   = ""
-    private const val ownerID = ""
+object Main {
 
     @JvmStatic
     fun main(args: Array<String>) {
         println(this::class.qualifiedName)
 
-        val bot = Bot(token, ownerID).run()
+        val list = readConfig("config.bot")
+        val bot = Bot(list[0], list[1]).run()
 
         while(true) {
             println(" - Ready to read from console -")
             println("CONSOLE: " + readLine())
         }
     }
+
 }

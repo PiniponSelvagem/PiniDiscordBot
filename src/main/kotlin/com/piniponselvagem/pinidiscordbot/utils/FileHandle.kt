@@ -41,3 +41,20 @@ fun readFrom(dir: String, fileName: String) : Boolean {
     }
     return false
 }
+
+fun readConfig(fileName: String) : MutableList<String> {
+    val reader: BufferedReader
+    val list: MutableList<String> = mutableListOf()
+    try {
+        reader = BufferedReader(FileReader(fileName))
+        list.add(0, reader.readLine())
+        list.add(1, reader.readLine())
+        reader.close()
+    } catch (e: IOException) {
+        println(e)
+        //TODO: //log.error(e.message)
+    }
+    finally {
+        return list
+    }
+}
