@@ -1,8 +1,8 @@
-package com.piniponselvagem.pinidiscordbot.commands
+package com.piniponselvagem.discordbot.commands
 
-import com.piniponselvagem.pinidiscordbot.Bot
-import com.piniponselvagem.pinidiscordbot.data.ChannelType
-import com.piniponselvagem.pinidiscordbot.data.DChannel
+import com.piniponselvagem.discordbot.Bot
+import com.piniponselvagem.discordbot.data.ChannelType
+import com.piniponselvagem.discordbot.data.DChannel
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent
 
 class ChannelWhiteList : Command {

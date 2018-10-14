@@ -1,6 +1,6 @@
-package com.piniponselvagem.pinidiscordbot.commands
+package com.piniponselvagem.discordbot.commands
 
-import com.piniponselvagem.pinidiscordbot.Bot
+import com.piniponselvagem.discordbot.Bot
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent
 
 class AntiMove : Command {

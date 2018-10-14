@@ -1,4 +1,4 @@
-package com.piniponselvagem.pinidiscordbot.data
+package com.piniponselvagem.discordbot.data
 
 enum class ChannelType {
     TEXT, VOICE

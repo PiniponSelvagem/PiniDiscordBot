@@ -1,7 +1,6 @@
-package com.piniponselvagem.pinidiscordbot.events
+package com.piniponselvagem.discordbot.events
 
-import com.piniponselvagem.pinidiscordbot.Bot
-import com.piniponselvagem.pinidiscordbot.utils.writeTo
+import com.piniponselvagem.discordbot.Bot
 import net.dv8tion.jda.core.entities.Channel
 import net.dv8tion.jda.core.entities.Guild
 import net.dv8tion.jda.core.entities.Member
@@ -11,10 +10,11 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent
 import net.dv8tion.jda.core.hooks.ListenerAdapter
 import net.dv8tion.jda.core.managers.GuildController
-
+import org.slf4j.LoggerFactory
 
 
 class DiscordListener(val bot: Bot) : ListenerAdapter() {
+    private var log = LoggerFactory.getLogger(this::class.qualifiedName)
 
     override fun onReady(event: ReadyEvent) {
         for (g: Guild in bot.jda.guilds) {
@@ -37,13 +37,16 @@ class DiscordListener(val bot: Bot) : ListenerAdapter() {
             }
             //writeTo("guilds\\${g.id}", "info.txt", txt.toString())
         }
+
+        log.debug("Bot listener ready!")
     }
 
     override fun onGuildMessageReceived(event: GuildMessageReceivedEvent) {
         //event.channel.id == "476806936029954048"
         //if (event.channel.id == "476806936029954048") {
 
-            println("${event.channel} - ${event.author.name} [${event.author.id}}: ${event.message.contentRaw}")
+            log.info("${event.channel} - ${event.author.name} [${event.author.id}}: ${event.message.contentRaw}")
+
 
             if (event.author.isBot) return
 
@@ -81,15 +84,14 @@ class DiscordListener(val bot: Bot) : ListenerAdapter() {
             if (event.message.contentRaw == "follow") {
                 followRodas = !followRodas
                 antiMove = followRodas
-                event.channel.sendMessage("FOLLOW = $followRodas").queue()
-                event.channel.sendMessage("ANTIMOVE = $antiMove").queue()
+                event.channel.sendMessage("FOLLOW = $followRodas\n\"ANTIMOVE = $antiMove\"").queue()
             }
         }
     }
 
     private var moving = false
-    private var antiMove = false
-    private var followRodas = false
+    private var antiMove = true
+    private var followRodas = true
     override fun onGuildVoiceMove(event: GuildVoiceMoveEvent) {
         if (event.member.user.id == "226488833053687808" || event.member.user.id == "341944666616365057") { //pini || rodas
             val member  = event.guild.memberCache.getElementById("226488833053687808")

@@ -1,6 +1,6 @@
-package com.piniponselvagem.pinidiscordbot.parser
+package com.piniponselvagem.discordbot.parser
 
-import com.piniponselvagem.pinidiscordbot.commands.Command
+import com.piniponselvagem.discordbot.commands.Command
 
 
 object CommandParser {

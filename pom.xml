@@ -36,6 +36,28 @@
             <artifactId>JDA</artifactId>
             <version>3.8.0_427</version>
         </dependency>
+
+        <!-- PINI Dependencies  -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jcabi</groupId>
+            <artifactId>jcabi-log</artifactId>
+            <version>0.17.3</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -71,7 +93,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.piniponselvagem.pinidiscordbot.Main</mainClass>
+                                    <mainClass>com.piniponselvagem.discordbot.Main</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>

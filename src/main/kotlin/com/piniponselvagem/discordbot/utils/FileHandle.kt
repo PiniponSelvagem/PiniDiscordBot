@@ -1,4 +1,4 @@
-package com.piniponselvagem.pinidiscordbot.utils
+package com.piniponselvagem.discordbot.utils
 
 import java.io.*
 
