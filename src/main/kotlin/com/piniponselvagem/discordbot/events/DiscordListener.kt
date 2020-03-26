@@ -5,6 +5,8 @@ import net.dv8tion.jda.core.entities.Channel
 import net.dv8tion.jda.core.entities.Guild
 import net.dv8tion.jda.core.entities.Member
 import net.dv8tion.jda.core.events.ReadyEvent
+import net.dv8tion.jda.core.events.guild.voice.GuildVoiceDeafenEvent
+import net.dv8tion.jda.core.events.guild.voice.GuildVoiceGuildDeafenEvent
 import net.dv8tion.jda.core.events.guild.voice.GuildVoiceMoveEvent
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent
@@ -108,5 +110,16 @@ class DiscordListener(val bot: Bot) : ListenerAdapter() {
             } else
                 moving = false
         }
+    }
+
+    override fun onGuildVoiceDeafen(event: GuildVoiceDeafenEvent?) {
+        /*
+        if (event != null && event.member.user.id == "226488833053687808") {
+            log.info("${event.member.user.name} - ${event.member.voiceState.isDeafened}")
+            val guild = GuildController(event.guild)
+            guild.setDeafen(event.member, false)
+            log.info("${event.member.user.name} - ${event.member.voiceState.isDeafened}")
+        }
+        */
     }
 }

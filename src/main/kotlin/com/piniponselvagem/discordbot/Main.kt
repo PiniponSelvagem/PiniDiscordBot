@@ -31,7 +31,7 @@ object Main {
             BasicConfigurator.configure()
         }
 
-        var log = LoggerFactory.getLogger(this::class.qualifiedName)
+        val log = LoggerFactory.getLogger(this::class.qualifiedName)
         log.trace("Testing TRACE logging -> OK!")
         log.debug("Testing DEBUG logging -> OK!")
         log.info("Testing INFO logging -> OK!")
@@ -40,7 +40,6 @@ object Main {
 
         val list = readConfig("config.bot")
         val bot = Bot(list[0], list[1]).run()
-
         /*
         while(true) {
             println(" - Ready to read from console -")
